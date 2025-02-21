@@ -1,0 +1,36 @@
+<#
+
+.NOTES
+    Author          : Victor Floyd
+    LinkedIn        : linkedin.com/in/VictorFloyd/
+    GitHub          : github.com/Victor-Floyd
+    Date Created    : 2025-02-21
+    Last Modified   : 2025-02-21
+    Version         : 1.0
+    CVEs            : N/A
+    Plugin IDs      : N/A
+    STIG-ID         : WN10-SO-000030
+
+.TESTED ON
+    Date(s) Tested  : 
+    Tested By       : 
+    Systems Tested  : 
+    PowerShell Ver. : 
+
+.USAGE
+
+#>
+
+# PowerShell Script to Enable Audit Policy Subcategories
+
+# Define the registry path and key
+$regPath = "HKLM:\SYSTEM\CurrentControlSet\Control\Lsa"
+$propertyName = "SCENoApplyLegacyAuditPolicy"
+
+# Set the SCENoApplyLegacyAuditPolicy to 1 to enable subcategory auditing
+Set-ItemProperty -Path $regPath -Name $propertyName -Value 1 -Type DWord
+
+# Force Group Policy update to apply changes
+gpupdate /force
+
+Write-Output "Audit policy using subcategories has been enabled successfully."
