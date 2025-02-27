@@ -8,8 +8,7 @@ This repository includes:
 📡 Additional Resources – Various security tools, templates, and configurations that support cybersecurity best practices.
 
 💡 Purpose
-This repository highlights my ability to:
-
+This repository is to:
 Develop and deploy automation for efficient security operations.
 Implement remediation strategies aligned with industry standards and best practices.
 Interpret scan reports and apply appropriate security controls.
